@@ -39,9 +39,9 @@ def change_contact(args, contacts):
     if len(args) < 2:
         return "Usage: change <name> <new_phone1> [new_phone2] ..."
     name, *phones = args
-    for name in contacts:
-        contacts[name] = phones
-        return f"Contact '{name}' updated with {len(phones)} phone(s)."
+    # for name in contacts:
+    contacts[name] = phones
+    return f"Contact '{name}' updated with {len(phones)} phone(s)."
     # else:
     #     return f"No contact found with name '{name}'."
 
@@ -85,7 +85,8 @@ def main():
         elif command == "phone":
             print(show_phone(args, contacts))
 
-        elif command == "show" and args == ["all"]:
+        # elif command == "show" and args == ["all"]:
+        elif command == "all":
             print(show_all_contacts(contacts))
         
         elif command in ["close", "exit"]:
